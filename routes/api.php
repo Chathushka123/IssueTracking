@@ -35,3 +35,4 @@ Route::post('addIssueComment','App\Http\Controllers\IssueController@addIssueComm
 ///////////////////////////////////////////////////////////////////////////////
 
 Route::post('createCategory','App\Http\Controllers\CategoryController@createCategory')->name('createCategory');
+Route::post('createCategoryIssueByCategory','App\Http\Controllers\CategoryController@createCategoryIssueByCategory')->name('createCategoryIssueByCategory');
