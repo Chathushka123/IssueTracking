@@ -37,7 +37,8 @@ class CategoryController extends Controller
             }
     
         }
-
+        
+        // Create IssueCategory By category
         public function createCategoryIssueByCategory(Request $request){
             DB::beginTransaction();
             try{

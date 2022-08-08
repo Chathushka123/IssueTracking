@@ -84,7 +84,7 @@ class IssueController extends Controller
     }
 
     // Get Issue By Uuid
-    public function  getIssueByUuid($uuid){
+    public function getIssueByUuid($uuid){
         try{
             $issue = Issue::select('*')
                     ->where('uuid' ,$uuid)
@@ -125,6 +125,7 @@ class IssueController extends Controller
 
     // Add Comment to an Issue
     public function addIssueComment(Request $request){
+        DB::beginTransaction();
         try{
 
             $issue = Issue::find($request->issue_id);
@@ -144,9 +145,11 @@ class IssueController extends Controller
             }
 
             $issue->comments()->create($comment_data);
+            DB::commit();
             return response()->json(['status'=>'success','data'=>$issue],200);
 
         }catch (Exception $e) {
+            DB::rollBack();
             throw new \App\Exceptions\GeneralException($e->getMessage());
         }
     }

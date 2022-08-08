@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('createIssue','App\Http\Controllers\IssueController@createIssue')->name('createIssue');
 Route::get('getIssue','App\Http\Controllers\IssueController@getIssue')->name('getIssue');
-Route::post('addIssueImage','App\Http\Controllers\IssueController@addissueImage')->name('addissueImage');
+Route::post('addIssueImage','App\Http\Controllers\IssueController@addIssueImage')->name('addIssueImage');
 Route::get('getIssueByUuid/{uuid}','App\Http\Controllers\IssueController@getIssueByUuid')->name('getIssueByUuid');
 Route::get('getIssueByCategory/{categoryId}','App\Http\Controllers\IssueController@getIssueByCategory')->name('getIssueByCategory');
 Route::get('getIssueBySubcategory/{subcategoryId}','App\Http\Controllers\IssueController@getIssueBySubcategory')->name('getIssueBySubcategory');
