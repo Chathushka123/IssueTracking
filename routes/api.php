@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //                            Issue                                        //
 ///////////////////////////////////////////////////////////////////////////////
 
-Route::post('createIssue','App\Http\Controllers\IssueController@createRec')->name('createIssue');
+Route::post('createIssue','App\Http\Controllers\IssueController@createIssue')->name('createIssue');
 Route::get('getIssue','App\Http\Controllers\IssueController@getIssue')->name('getIssue');
 Route::post('addIssueImage','App\Http\Controllers\IssueController@addissueImage')->name('addissueImage');
 Route::get('getIssueByUuid/{uuid}','App\Http\Controllers\IssueController@getIssueByUuid')->name('getIssueByUuid');
@@ -30,4 +30,8 @@ Route::get('getIssueByCategory/{categoryId}','App\Http\Controllers\IssueControll
 Route::get('getIssueBySubcategory/{subcategoryId}','App\Http\Controllers\IssueController@getIssueBySubcategory')->name('getIssueBySubcategory');
 Route::post('addIssueComment','App\Http\Controllers\IssueController@addIssueComment')->name('addIssueComment');
 
+////////////////////////////////////////////////////////////////////////////////
+//                            Category                                        //
+///////////////////////////////////////////////////////////////////////////////
 
+Route::post('createCategory','App\Http\Controllers\CategoryController@createCategory')->name('createCategory');

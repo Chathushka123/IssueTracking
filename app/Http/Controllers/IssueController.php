@@ -23,7 +23,7 @@ class IssueController extends Controller
 
 
     // Create New Issue  
-    public function createRec(Request $request){
+    public function createIssue(Request $request){
         DB::beginTransaction();
 
         try{
